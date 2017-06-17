@@ -22,11 +22,22 @@
     </modules>
 
     <scm>
-        <url>https://hhazewinkel@github.com/hhazewinkel/smi4j.git</url>
-        <connection>scm:git:git://github.com/hhazewinkel/smi4j.git</connection>
-        <developerConnection>scm:git:git@github.com:hhazewinkel/smi4j.git</developerConnection>
+        <url>https://infiniteautomation@github.com/infiniteautomation/smi4j.git</url>
+        <connection>scm:git:git://github.com/infiniteautomation/smi4j.git</connection>
+        <developerConnection>scm:git:git@github.com:infiniteautomation/smi4j.git</developerConnection>
         <tag>v1.0.0</tag>
     </scm>
+
+	<distributionManagement>
+		<snapshotRepository>
+        	<id>ias-snapshots</id>
+	    	<url>https://maven.mangoautomation.net/repository/ias-snapshot/</url>
+		</snapshotRepository>
+    	<repository>
+        	<id>ias-releases</id>
+	   		<url>https://maven.mangoautomation.net/repository/ias-release/</url>
+    	</repository>
+	</distributionManagement>
 
     <dependencyManagement>
         <dependencies>
