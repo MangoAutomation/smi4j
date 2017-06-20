@@ -58,4 +58,11 @@ public class ModuleHashTable {
     static public boolean exists(ModuleIdentifier key) {
         return exists(key.toString());
     }
+    
+    /**
+     * Reset the table
+     */
+    static public void clear(){
+    	hash.clear();
+    }
 }

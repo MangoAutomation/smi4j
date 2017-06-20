@@ -33,6 +33,14 @@ public class TokenMgrError extends Error
     */
    int errorCode;
 
+   boolean EOFSeen;
+   int lexState;
+   int errorLine;
+   int errorColumn;
+   String errorAfter;
+   char curChar;
+   int reason;
+   
    /**
     * Replaces unprintable characters by their espaced (or unicode escaped)
     * equivalents in the given string
@@ -130,4 +138,68 @@ public class TokenMgrError extends Error
    public TokenMgrError(boolean EOFSeen, int lexState, int errorLine, int errorColumn, String errorAfter, char curChar, int reason) {
       this(LexicalError(EOFSeen, lexState, errorLine, errorColumn, errorAfter, curChar), reason);
    }
+
+	public int getErrorCode() {
+		return errorCode;
+	}
+	
+	public void setErrorCode(int errorCode) {
+		this.errorCode = errorCode;
+	}
+	
+	public boolean isEOFSeen() {
+		return EOFSeen;
+	}
+	
+	public void setEOFSeen(boolean eOFSeen) {
+		EOFSeen = eOFSeen;
+	}
+	
+	public int getLexState() {
+		return lexState;
+	}
+	
+	public void setLexState(int lexState) {
+		this.lexState = lexState;
+	}
+	
+	public int getErrorLine() {
+		return errorLine;
+	}
+	
+	public void setErrorLine(int errorLine) {
+		this.errorLine = errorLine;
+	}
+	
+	public int getErrorColumn() {
+		return errorColumn;
+	}
+	
+	public void setErrorColumn(int errorColumn) {
+		this.errorColumn = errorColumn;
+	}
+	
+	public String getErrorAfter() {
+		return errorAfter;
+	}
+	
+	public void setErrorAfter(String errorAfter) {
+		this.errorAfter = errorAfter;
+	}
+	
+	public char getCurChar() {
+		return curChar;
+	}
+	
+	public void setCurChar(char curChar) {
+		this.curChar = curChar;
+	}
+	
+	public int getReason() {
+		return reason;
+	}
+	
+	public void setReason(int reason) {
+		this.reason = reason;
+	}
 }
