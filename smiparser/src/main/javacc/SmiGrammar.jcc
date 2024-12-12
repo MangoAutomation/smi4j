@@ -6,12 +6,12 @@
 
 PARSER_BEGIN(SmiGrammar)
 
-package com.mod_snmp.SmiParser.Grammar;
+package com.mod_snmp.smiparser.grammar;
 
 import java.io.*;
 import java.util.*;
-import com.mod_snmp.SmiParser.SyntaxTree.*;
-import com.mod_snmp.SmiParser.ErrorHandler.*;
+import com.mod_snmp.smiparser.syntaxtree.*;
+import com.mod_snmp.smiparser.errorhandler.*;
 
 
 public class SmiGrammar 
@@ -439,10 +439,11 @@ JAVACODE
 NodeList ModuleExport(NodeList exports)
 {
     Token tok;
-    while ( true ) {
+    boolean more = true;
+    while ( more ) {
         tok = getToken(1);
-        if ((tok.kind == SEMI_COLON_T) && (tok.kind == IMPORTS_T)) {
-            break;
+        if ((tok.kind == SEMI_COLON_T) || (tok.kind == IMPORTS_T)) {
+            more = false;
         }
         if (tok.kind != COMMA_T) {
             exports.addNode(makeNodeToken(tok));
