@@ -4,15 +4,13 @@
     <parent>
         <groupId>net.lisanza.smi4j</groupId>
         <artifactId>smi4j</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <name>SMI Parser</name>
     <artifactId>smiparser</artifactId>
     <packaging>jar</packaging>
-
-    <dependencies>
-    </dependencies>
 
     <build>
         <!--<plugins>-->
@@ -36,5 +34,11 @@
         <!--</executions>-->
         <!--</plugin>-->
         <!--</plugins>-->
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
     </build>
 </project>
